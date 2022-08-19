@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/Global.js"></script>
+    <script src="js/index.js"></script>
+    <title>Agility Report | LogIn </title>
+</head>
+<body onload="LogOut();">
+    <div class="MainContainer" >
+        <div class="LoginForm Box_Type1">
+            <img src="resources/Logo-3.png" class="iconLogo">
+            <div class="FlexBox FlexCenter FlexColumn">
+                <img src="resources/user_white.png" class="iconField">
+                <input type="text" class="Input_Text" id="I_MAIL" name="I_MAIL" placeholder="USUARIO">
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn">
+                <img src="resources/key_white.png" class="iconField">
+                <input type="password" class="Input_Text" id="I_PWD" name="I_PWD" placeholder="CLAVE">
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn" style="margin-bottom: 0px;">
+                <input type="button" id="BtnLogin" onclick="LogIn()" style="visibility: collapse;">
+                <label for="BtnLogin" class="FlexBox FlexCenter FlexColumn">
+                    <p class="TxtLogin">ENTRAR</p>
+                    <img src="resources/Right_Arrow_White.png" class="Box_Type2 BtnLogin">
+                </label>
+            </div><br><br>
+            <div class="FlexBox FlexCenter FlexColumn">
+                <a href="RecoveryKey.html"><p class="Box_Type3 bgRed ButtonAuxLogin ">RECUPERAR CLAVE</p></a>
+                <a href=""><p class="Box_Type3 bgBlack ButtonAuxLogin">CONTACTAR</p></a>
+            </div>
+        </div>
+    </div>
+
+    <div class="AuxContainer FlexBox FlexCenter FlexRow">
+        <img src="resources/Light_White.png" class="Box_Type2 BtnAux">
+        <p class="TxtAux">TEMA</p>
+        <img src="resources/information_white.png" class="Box_Type2 BtnAux">
+        <p class="TxtAux">INFO</p>
+
+    </div>
+</body>
+</html>

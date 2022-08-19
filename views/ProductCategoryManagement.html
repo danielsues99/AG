@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/UserManagement.css">
+    <script src="../js/Global.js"></script>
+    <script src="../js/UserManagement.js"></script>
+    <script src="../js/ProductCategoryManagement.js"></script>
+    <title>Agility Report | Administracion de usuarios</title>
+</head>
+<body class="bodyBack"  onload="ValidateSession();">
+
+    <div class="MainContainerBack">
+
+        <!-- HEADER -->
+        <div class="Box_Type1 FlexBox FlexColumn HeaderBox">
+            <div class="FlexBox FlexCenter FlexColumn Header_C1">
+                <img class="ProfilePhoto" src="../resources/BigUser_White.png" />
+                
+                <div class="FlexBox FlexRow LabelsInfo">
+                    <p class="Bold" id="lbl_User">Usuario Logueado</p>
+                    <p class="Italic" id="lbl_TypeUser">Rango</p>
+                </div>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C2">
+                <img class="LogoPhoto" src="../resources/Logo.png" />
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C3">
+                <a href="Dashboard.html" class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/tile_white.png" >
+                </a>
+                <a class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/Light_White.png">
+                </a>
+                <a href="../Index.html" class="Box_Type2 BtnHeaderExit "> 
+                    <img src="../resources/exit_white.png">
+                </a>
+               
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="Box_Type1 FlexBox FlexColumn ContentBox">
+            <div class="GraphSection">
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+            </div>
+            <div class="InfoSection">
+                <p class="P_Title">ADMINISTRACION DE USUARIOS</p>
+                <div class="FlexBox FlexColumn ContentBox">
+                    <a onclick="EditUser(0)" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
+                        <img src="../resources/BigUser_White.png"/>
+                        <p> USUARIO NUEVO</p>
+                    </a>
+                    <a href="" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
+                        <img src="../resources/Config_white.png"/>
+                        <p> TIPOS DE USUARIO</p>
+                    </a>
+                </div >
+                <div class="Input_Text tblList">
+                    <table id="TblProductsC">
+                        <tr>
+                            <th>EDITAR</th>
+                            <th>ELIMINAR</th>
+                            <th>PRIMER NOMBRE</th>
+                            <th>SEGUNDO NOMBRE</th>
+                            <th>OTRO NOMBRE</th>
+                            <th>APELLIDOS</th>
+                            <th>CEDULA</th>
+                            <th>CELULAR</th>
+                            <th>CORREO</th>
+                            <th>TIPO DE USUARIO</th>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        
+    </div>
+
+    
+    
+</body>
+
+</html>

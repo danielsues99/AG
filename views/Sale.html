@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/Purchase.css">
+    <script src="../js/Global.js"></script>
+    <script src="../js/Ssale.js"></script>
+    <title>Agility Report | Compras</title>
+</head>
+<body class="bodyBack" onload="ValidateSession(); fillCategory(); fillLocation();">
+
+    <div class="MainContainerBack">
+
+        <!-- HEADER -->
+        <div class="Box_Type1 FlexBox FlexColumn HeaderBox">
+            <div class="FlexBox FlexCenter FlexColumn Header_C1">
+                <img class="ProfilePhoto" src="../resources/BigUser_White.png" />
+                
+                <div class="FlexBox FlexRow">
+                    <p id="lbl_User">Usuario Logueado</p>
+                    <p id="lbl_TypeUser">Rango</p>
+                </div>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C2">
+                <a href="Dashboard.html"> 
+                    <img class="LogoPhoto" src="../resources/Logo.png" />
+                </a>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C3">
+                <a href="Dashboard.html" class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/tile_white.png" >
+                </a>
+                <a class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/Light_White.png">
+                </a>
+                <a href="../Index.html" class="Box_Type2 BtnHeaderExit "> 
+                    <img src="../resources/exit_white.png">
+                </a>
+               
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="Box_Type1 FlexBox FlexColumn ContentBox">
+            <div class="GraphSection">
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+            </div>
+            <div class="InfoSection">
+                <p class="P_Title2">MODULO DE COMPRAS</p>
+
+                <div class="FlexBox FlexColumn FlexCenter" style="width: 100%;"> 
+                    <div class="FlexBox FlexRow" style="width: 80%;" >
+                        <p>Serial *</p>
+                        <input type="text" id="4" class="Input_Text" placeholder="Escriba aqui..." required />
+                    </div>
+                    <div onclick="AddProduct();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                        <img src="../resources/BolsaDeCompras_White.png"/>
+                        <p> AGREGAR</p>
+                    </div>
+                </div>
+                
+                <br>
+                
+                <div class="Input_Text tblList" style="margin-top: 25px;">
+                    <table id="TblProducts">
+                        <tr>
+                            <th>QUITAR</th>
+                            <th>TIPO</th>
+                            <th>SERIAL</th>
+                            <th>PRECIO</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+
+                <div class="FlexBox FlexColumn FlexCenter" style="width: 100%;"> 
+                    <a href="Dashboard.html" class="FlexBox FlexRow FlexCenter Box_Type3 ButtonAux BtnFormPurchase">
+                        <img src="../resources/Delete_White.png"/>
+                        <p> CANCELAR </p>
+                    </a>
+                    <div onclick="FinishBuy();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                        <img src="../resources/ShoppingCar_White.png"/>
+                        <p> FINALIZAR </p>
+                    </div>
+                </div>
+            </div>
+
+
+            
+        </div>
+
+        
+    </div>
+
+    <div id="CategoryForm" style="visibility: hidden; position:fixed; width: 100%; height: 100%; display: flex;
+    justify-content: center; background-color: rgba(10, 10, 10, 0.97);
+    align-items: center;">
+        <div class="FlexBox FlexRow FlexCenter" style="width: 60%;"> 
+            <div class="FlexBox FlexRow FlexCenter" style="width: 60%;" >                
+                <p class="P_Title2">REGISTRAR CATEGORIA</p>
+            </div>
+            <div class="FlexBox FlexRow" style="width: 60%;" >
+                <p>Nombre de categoria *</p>
+                <input type="text" id="C1" class="Input_Text" placeholder="Escriba aqui..." required />
+            </div>
+            <div class="FlexBox FlexColumn FlexCenter" style="width: 60%;" >                
+                <div onclick="ViewCloseCategoryForm();" class="FlexBox FlexRow FlexCenter Box_Type3 bgRed ButtonAux BtnFormPurchase">
+                    <img src="../resources/Left_Arrow_White.png"/>
+                    <p> VOLVER </p>
+                </div>
+                <div onclick="AddProductCategory();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                    <img src="../resources/Pencil_White.png"/>
+                    <p> AGREGAR</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="TypeForm" style="visibility: hidden; position:fixed; width: 100%; height: 100%; display: flex;
+    justify-content: center; background-color: rgba(10, 10, 10, 0.97);
+    align-items: center;">
+        <div class="FlexBox FlexRow FlexCenter" style="width: 60%;"> 
+            <div class="FlexBox FlexRow FlexCenter" style="width: 60%;" >                
+                <p class="P_Title2">REGISTRAR TIPO</p>
+            </div>
+            <div class="FlexBox FlexRow" style="width: 60%;" >
+                <p>Nombre de tipo del producto *</p>
+                <input type="text" id="C2" class="Input_Text" placeholder="Escriba aqui..." required />
+            </div>
+            <div class="FlexBox FlexRow" style="width: 60%;" >
+                <p>Precio *</p>
+                <input type="text" id="C3" class="Input_Text" placeholder="Escriba aqui..." required />
+            </div>
+            <div class="FlexBox FlexColumn FlexCenter" style="width: 60%;" >                
+                <div onclick="ViewCloseTypeForm();" class="FlexBox FlexRow FlexCenter Box_Type3 bgRed ButtonAux BtnFormPurchase">
+                    <img src="../resources/Left_Arrow_White.png"/>
+                    <p> VOLVER </p>
+                </div>
+                <div onclick="AddProductType();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                    <img src="../resources/Pencil_White.png"/>
+                    <p> AGREGAR</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    
+    
+</body>
+
+
+
+
+
+</html>

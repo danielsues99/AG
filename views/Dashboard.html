@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general.css">
+    <script src="../js/Global.js"></script>
+    <title>Agility Report | Dashboard</title>
+</head>
+<body class="bodyBack" onload="ValidateSession();">
+
+    <div class="MainContainerBack">
+
+        <!-- HEADER -->
+        <div class="Box_Type1 FlexBox FlexColumn HeaderBox">
+            <div class="FlexBox FlexCenter FlexColumn Header_C1">
+                <img class="ProfilePhoto" src="../resources/BigUser_White.png" />
+                
+                <div class="FlexBox FlexRow LabelsInfo">
+                    <p class="Bold" id="lbl_User">Usuario Logueado</p>
+                    <p class="Italic" id="lbl_TypeUser">Rango</p>
+                </div>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C2">
+                <a href="Dashboard.html"> 
+                    <img class="LogoPhoto" src="../resources/Logo.png" />
+                </a>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C3">
+                <a href="Dashboard.html" class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/tile_white.png" >
+                </a>
+                <a class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/Light_White.png">
+                </a>
+                <a href="../Index.html" class="Box_Type2 BtnHeaderExit "> 
+                    <img src="../resources/exit_white.png">
+                </a>
+               
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="Box_Type1 FlexBox FlexColumn ContentBox">
+            <div class="GraphSection">
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+                <div class="GraphIcon">
+                    <p>80%</p>
+                </div>
+                <p>ALCANCE MES PASADO</p>
+            </div>
+            <div class="FlexBox FlexColumn ContentTiles">
+                <div onclick="window.location.href = 'Sale.html';" class="Box_Type1 FlexBox FlexColumn FlexCenter tileMenu">
+                    <img src="../resources/Box_white.png" alt="" width="110px">
+                    <p>MOD. VENTAS</p>
+                </div>
+                <div onclick="window.location.href = 'Purchase.html';" class="Box_Type1 FlexBox FlexColumn FlexCenter tileMenu">
+                    <img src="../resources/shopping-cart_White.png" alt="" width="110px">
+                    <p>MOD. COMPRAS</p>
+                </div>
+                <div class="Box_Type1 FlexBox FlexColumn FlexCenter tileMenu">
+                    <img src="../resources/Search_white.png" alt="" width="90px">
+                    <p>MOD. CONSULTAS</p>
+                </div>
+                <div onclick="window.location.href = 'UserManagement.html';" class="Box_Type1 FlexBox FlexColumn FlexCenter tileMenu">
+                    <img src="../resources/BigUser_White.png" alt="" width="90px">
+                    <p>MOD. USUARIO</p>
+                </div>
+            </div>
+            
+        </div>
+
+        <br><br>
+    </div>
+</body>
+</html>

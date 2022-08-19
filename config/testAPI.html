@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        let formData = new FormData();
+            formData.append('Mail', 'hectoracostadd@gmail.com');
+            formData.append('Password', 'admin1234');
+
+        
+        fetch("php/LoginAPI.php?op=1",
+            {
+                body: formData,
+                method: "post"
+            })
+            .then(function (result) {
+                if (result.ok) {
+                    return result.json();
+                }
+            }).then(
+                function(data){
+                    if(data.AR_Result.IdUser > 0){
+                        alert("Inicio de sesion correcto");
+                    }else{
+                        alert("No se inicio la sesion porque los datos no se encuentran.");
+                    }
+                }
+            );
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

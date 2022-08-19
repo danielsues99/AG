@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/general.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="js/index.js"></script>
+    <script src="js/RecoveryKey.js"></script>
+    <script src='https://www.google.com/recaptcha/api.js?hl=es'></script>
+    <title>Agility Report | Recuperacion de clave </title>
+</head>
+<body>
+    <form class="MainContainer" method="post" action="php/RecoveryKey.php">
+        <div class="LoginForm Box_Type1">
+            <img src="resources/Logo-3.png" class="iconLogo">
+            
+            <p class="TxtLogin">RECUEPRAR CLAVE</p>
+            <br/>
+            <div class="FlexBox FlexCenter FlexColumn">
+                <img src="resources/user_white.png" class="iconField">
+                <input type="text" class="Input_Text" id="I_MAIL" name="I_MAIL" placeholder="CORREO">
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn">
+                <div id="g-recaptcha-response" class="g-recaptcha" data-sitekey="6LdDNFYdAAAAAGmBTjdqpFUHWjpBa53pQzMuJixY" data-theme="dark"></div>
+            </div>
+            
+            <div class="FlexBox FlexCenter FlexColumn">
+                <a href="Index.html"><p class="Box_Type3 bgBlack ButtonAuxLogin">VOLVER</p></a>
+               <p class="Box_Type3 bgRed ButtonAuxLogin " onclick="GetCaptchaValue();">RECUPERAR CLAVE</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="AuxContainer FlexBox FlexCenter FlexRow">
+        <img src="resources/Light_White.png" class="Box_Type2 BtnAux">
+        <p class="TxtAux">TEMA</p>
+        <img src="resources/information_white.png" class="Box_Type2 BtnAux">
+        <p class="TxtAux">INFO</p>
+
+    </div>
+</body>
+</html>

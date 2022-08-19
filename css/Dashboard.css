@@ -1,0 +1,251 @@
+/* ESPACIO GENERAL Y COMUN DEL DOCUMENTO */
+body {
+    background-color:#141414;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;  
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;  
+}
+
+.fondo {
+    height: auto;
+    max-width: 1580px;
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    opacity: 0.015;
+}
+
+
+/* ENCABEZADO */
+
+.encabezadoGeneral {
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 0.5fr 3.5fr 0.5fr repeat(3, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    margin-top: 55px;
+    margin-left: 55px;
+    padding-left: 25px ;
+    margin-right: 55px;
+    padding-right: 25px ;
+    height: 100px;
+    box-shadow: -3px -3px 5px rgb(46, 46, 46), 3px 3px 5px black;
+    border-radius: 12px; 
+    }
+
+.encabezadoA {
+    grid-area: 1 / 1 / 2 / 2;
+    margin-left: 60px;
+}   
+
+.logoPerfil {
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+
+.encabezadoB {
+    grid-area: 1 / 2 / 2 / 3;
+    line-height : 15px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+
+    padding-left: 25px ;
+    padding-right: 120px;
+}
+
+.textoPerfil1 {
+    padding-top: 0px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    font-size: 22px;
+}
+
+.textoPerfil2 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+
+.encabezadoC {
+    width: 1px; 
+    background-color: whitesmoke; 
+    height: 50px; 
+    grid-area: 1 / 3 / 2 / 4;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+}
+
+.encabezadoD {
+    width: 250px;
+    height: auto;
+    grid-area: 1 / 4 / 2 / 5;
+
+    padding-left: 50px ;
+    padding-right: 50px ;
+}
+
+.encabezadoE {
+    width: 1px; 
+    background-color: whitesmoke; 
+    height: 50px; 
+    grid-area: 1 / 5 / 2 / 6;
+
+    margin-top: 25px;
+    margin-bottom: 25px;
+    margin-left: 25px ;
+    margin-right: 120px ;
+}
+
+.encabezadoF {
+    margin-top: 30px;
+    vertical-align: middle;
+    background-color: #141414;
+    box-shadow: -3px -3px 5px rgb(46, 46, 46), 3px 3px 5px black;
+    border-radius: 40px; 
+    width: 50px;
+    height:50px;
+    grid-area: 1 / 6 / 2 / 7;
+
+    margin-left: 50px ;
+    margin-right: 25px ;
+}
+
+.encabezadoG {
+    margin-top: 30px;
+    vertical-align: middle;
+    background-color: #141414;
+    box-shadow: -3px -3px 5px rgb(46, 46, 46), 3px 3px 5px black;
+    border-radius: 40px; 
+    width: 50px;
+    height:50px;
+    grid-area: 1 / 7 / 2 / 8;
+
+    margin-left: 25px ;
+    margin-right: 25px ;
+}
+
+.encabezadoH {
+    margin-top: 30px;
+    vertical-align: middle;
+    background-color: #141414;
+    box-shadow: -3px -3px 5px rgb(46, 46, 46), 3px 3px 5px black;
+    border-radius: 40px; 
+    width: 50px;
+    height:50px;
+    grid-area: 1 / 8 / 2 / 9;
+}
+
+
+
+.logoHorizontalNegro {
+    width: 300px;
+    height: auto;
+}
+
+
+img {
+    padding-top: 5px;
+    padding-left: 5px;
+    width: 40px;
+    height: auto;
+}
+
+.logoSalida {
+    padding-top: 7px;
+    padding-left: 9px;
+    width: 35px;
+    height: auto;
+}
+
+/* CUERPO O SECCION INFERIOR */
+
+.contenedorCuerpo {
+    display: grid;
+    grid-template-columns: 2.3fr 0.5fr repeat(2, 2.3fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+
+    margin-top: 55px;
+    margin-left: 55px;
+    padding-left: 25px ;
+    margin-right: 55px;
+    padding-right: 25px ;
+    height: 500px;
+    box-shadow: -3px -3px 5px rgb(46, 46, 46), 3px 3px 5px black;
+    border-radius: 12px; 
+}
+
+
+.seccionIzquierda {
+    margin-top: 35px;
+    margin-left: 100px;
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.textoProyeccion {
+    color: rgb(30, 114, 153);
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.logoGrafico {
+    width: 60px;
+    height: auto;
+    margin-left: 60px;
+}
+
+.seccionCentral {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.lineaVerticalPunteada {
+    border-left: whitesmoke 1px dashed;
+    height: 400px;
+    margin-top: 40px
+
+}
+
+.seccionDerecha1 {
+    grid-area: 1 / 3 / 2 / 4;
+    margin-top: 30px;
+    margin-left: 200px;
+}
+
+.seccionDerecha2 {
+    grid-area: 1 / 4 / 2 / 5;
+    margin-top: 30px;
+}
+
+.moduloMenu {
+    width: 200px;
+    height: 150px;
+    box-shadow: -3px -3px 5px rgb(46, 46, 46), 3px 3px 5px black;
+    border-radius: 12px;
+    padding-top: 15px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+
+}
+
+.logoMenu {
+    height: 100px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: auto;
+}
+
+.textoMenu {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: whitesmoke;
+    font-size: 20px;
+    font-weight: lighter;
+    text-align: center;
+}

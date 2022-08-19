@@ -1,0 +1,390 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    outline: none;
+    color: white;
+    font-family: 'Segoe UI';
+    text-decoration: none;
+}
+
+a{
+    cursor: pointer;
+}
+
+.FlexBox{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.FlexCenter{
+    justify-content: center;
+    align-items: center;
+}
+.FlexColumn{
+    flex-direction: row;
+}
+.FlexRow{
+    flex-direction: column;
+}
+
+.Box_Type1{
+    border-radius: 25px;
+    border: none;
+    background: #121212;
+    box-shadow:  7px 7px 11px #050505,
+                 -7px -7px 11px #272727;
+}
+
+.Box_Type2{
+    border-radius: 100%;
+    border: none;
+    background: #121212;
+    box-shadow:  5px 5px 11px #050505,
+                 -5px -5px 11px #272727;
+}
+.Box_Type3{
+    border-radius: 25px;
+    border: none;
+    background: #121212;
+    box-shadow:  5px 5px 11px #050505,
+                 -5px -5px 11px #272727;
+}
+
+.ContentTiles{
+    justify-content: space-around;
+    margin-left: 120px;
+}
+
+.tileMenu{
+    width: 165px;
+    height: 165px;
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-top: 50px;
+    margin-bottom: 20px;
+    cursor: pointer;
+}
+
+.tileMenu > img{
+    margin-bottom: -25px;
+}
+
+.Input_Text, .Input_Number{
+    background: #121212;
+    border: none;
+    box-shadow: -3px -3px 11px #050505,
+                 3px 3px 11px #272727;
+}
+
+
+.OrderForm{
+    justify-content: center;
+}
+
+
+.OrderForm div{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+
+.ButtonAux{
+    text-align: center;
+    border-radius: 15px;
+    margin-left: 15px;
+    margin-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    cursor: pointer;
+  }
+
+  .ButtonAux img{
+      width: 25px;
+      margin-right: 10px;
+  }
+
+  .imgTable{
+    width: 15px;
+    margin-right: 10px;
+}
+
+/* Body */
+.bodyBack{
+    background-color: rgb(32, 32, 32);
+    background-image: url('../resources/Wallpaper1.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    color: white;
+
+    overflow-y: hidden;
+}
+.MainContainerBack{
+    background-color: rgba(15, 15, 15, 0.94);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    overflow-y: auto;
+  }
+
+/* Header*/
+.HeaderBox{
+    width: 90%;
+      align-items: center;
+      justify-content:space-around;
+      margin-top: 20px;
+      padding: 0px;
+}
+
+.ProfilePhoto{
+    margin-right: 10px;
+    width: 20%;
+}
+.LabelsInfo{
+    font-size: 90%;
+}
+
+.LogoPhoto{
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.BtnHeader{
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+}
+
+.BtnHeader > img {
+    margin: 15%;
+    margin-left: 18%;
+    width: 40px;
+    height: 40px;
+}
+.BtnHeaderExit{
+    width: 60px;
+    height: 60px;
+    margin-left: 25px;
+}
+
+.BtnHeaderExit > img {
+    margin: 20%;
+    margin-left: 25%;
+    width: 33px;
+    height: 33px;
+}
+
+.Header_C1{
+    padding-right: 50px;
+    border-right: 2px solid white;
+}
+
+.Header_C2{
+    padding-left: 0px;
+    width: 25%;
+    height: 90px;
+}
+
+.Header_C3{
+    padding-left: 50px;
+    border-left: 2px solid white;
+}
+
+/* body content */
+.ContentBox{
+    width: 90%;
+    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+.GraphSection{
+    height: 100%;
+    width: 20%;
+    border-right: 2px dashed white ;
+    color: #228FBC;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    margin-right: 30px;
+    margin-left: -50px;
+    
+}
+.InfoSection{
+    margin-left: 50px;
+    width: 60%;
+    color: #228FBC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    
+}
+.P_Title{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: -20px;
+}
+.P_Title2{
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+.GraphSection p {
+    color: #228FBC;
+    font-weight: bold;
+}
+.GraphIcon{
+    width: 95px;
+    height: 95px;
+    border-radius: 100%;
+    border-top: 6px solid #228FBC;
+    border-right: 6px solid #228FBC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 6px 5px 14px 0px rgba(0,0,0,0.75);
+}
+.GraphIcon p{
+    margin-top: -8px;
+    font-size: 24px;
+}
+
+
+input[type=text], input[type=password]{
+    border-radius: 15px;
+    width: 85%;
+    height: 35px;
+    font-size: 16px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  select{
+    border-radius: 15px;
+    width: 170%;
+    height: 35px;
+    font-size: 16px;
+    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-top: 15px;
+    margin-bottom: -15px;
+    margin-left: -35px;
+  }
+/* Table style */
+.tblList{
+    width: 100%;
+    height: 260px;
+    overflow-y: auto;
+    overflow-x: auto;
+    padding: 15px;
+    border-radius: 20px;
+}
+
+table{
+    border-spacing: 12px 12px;
+}
+th {
+    
+    border-radius: 25px;
+    border: none;
+    background: #121212;
+    box-shadow:  3px 3px 11px #050505,
+                 -3px -3px 11px #272727;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+    white-space: nowrap;
+}
+td{
+    border-radius: 25px;
+    background: #121212;
+    border: none;
+    box-shadow: -3px -3px 11px #050505,
+                 3px 3px 11px #272727;
+
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+    white-space: nowrap;
+
+    min-width: 80px;
+}
+
+/* Scroll bar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background-color: #121212;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    border-radius: 100px;
+    border: none;
+    background: rgba(0, 211, 248, 0.274);
+    box-shadow:  7px 7px 11px #050505,
+                 -7px -7px 11px #272727;
+  }
+  
+  /* Handle on hover 
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }*/
+
+/* Background colors */
+.bgRed{
+    background-color: #BC2222;
+}
+.bgBlack{
+    background-color: #121212;
+}
+.bgBlue{
+    background-color: #228FBC;
+}
+.bgGray{
+    background-color: #6d6d6d;
+}
+
+
+/* Text */
+.Bold{
+    font-weight: bold;
+}
+.Italic{
+    font-style: italic;
+}

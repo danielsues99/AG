@@ -1,0 +1,108 @@
+body{
+    background-color: rgb(32, 32, 32);
+    background-image: url('../resources/Wallpaper1.png');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    
+    color: white;
+}
+
+.MainContainer{
+    background-color: rgba(15, 15, 15, 0.94);
+    position: absolute;
+    top: 0px;
+    left: 0px;
+
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+
+.LoginForm{
+    padding-top: 18px;
+    margin: auto;
+    
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    width: 40%;
+    height: auto;
+  }
+
+.LoginForm > div{
+    margin-bottom: 40px;
+    width: 100%;
+  }
+
+.iconLogo{
+    width: 35%;
+    margin: auto;
+    margin-bottom: 15px;
+  }
+
+input[type=text], input[type=password]{
+    border-radius: 15px;
+    width: 45%;
+    height: 45px;
+    font-size: 22px;
+    color: white;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+.iconField{
+    border-radius: 100%;
+      width: 30px;
+      padding: 10px;
+      margin-right: 20px;
+      background: #121212;
+      border: none;
+      box-shadow: -3px -3px 11px #050505,
+                   3px 3px 11px #272727;
+  }
+
+  .BtnLogin{
+    width: 25px;
+    padding: 10px;
+    margin-left: 20px;
+
+  }
+
+  .ButtonAuxLogin{
+    width: 200px;
+    text-align: center;
+    border-radius: 15px;
+    margin: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    font-size: 18px;
+  }
+
+  .TxtLogin{
+      font-size: 24px;
+  }
+
+  .AuxContainer{
+      padding-top: 25px;
+      position: absolute;
+      right: 20px;
+  }
+
+  
+  .BtnAux{
+    width: 35px;
+    padding: 10px;
+    margin-bottom: 5px;
+  }
+
+  .TxtAux{
+    font-size: 15px;
+    margin-bottom: 20px;
+  }
