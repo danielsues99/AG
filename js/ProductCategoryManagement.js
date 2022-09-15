@@ -1,7 +1,7 @@
-GetUsersList();
-function GetUsersList(){
+GetProductsList();
+function GetProductsList(){
     
-    fetch("../php/ProductCategoryAPI.php?op=2",
+    fetch("../php/ProductAPI.php?op=2",
         {
             //body: formData,
             method: "post"
@@ -11,30 +11,24 @@ function GetUsersList(){
                 return result.json();
             }
         }).then(
-            function(data){
-                var tableUsr = document.getElementById("TblProductsC");
-                data.Users.forEach(function(USR){
-                    var content = document.createElement("tr");
-                    var column01 = document.createElement("td");
-                    var column02 = document.createElement("td");
-                    var column1 = document.createElement("td");
-                    var column2 = document.createElement("td");
-                    var column3 = document.createElement("td");
-                    var column4 = document.createElement("td");
-                    var column5 = document.createElement("td");
-                    var column6 = document.createElement("td");
-                    var column7 = document.createElement("td");
-                    var column8 = document.createElement("td");
-                    var columnS01 = document.createElement("p");
-                    var columnS02 = document.createElement("p");
-                    var columnS1 = document.createElement("p");
-                    var columnS2 = document.createElement("p");
-                    var columnS3 = document.createElement("p");
-                    var columnS4 = document.createElement("p");
-                    var columnS5 = document.createElement("p");
-                    var columnS6 = document.createElement("p");
-                    var columnS7 = document.createElement("p");
-                    var columnS8 = document.createElement("p");
+            function(datos){
+                var tableProduct = document.getElementById("TblProductsC");
+                datos.Products.forEach(function(PRODUCT){
+                    var contenido = document.createElement("tr");
+                    var columna01 = document.createElement("td");
+                    var columna02 = document.createElement("td");
+                    var columna1 = document.createElement("td");
+                    var columna2 = document.createElement("td");
+                    var columna3 = document.createElement("td");
+                    var columna4 = document.createElement("td");
+                    var columna5 = document.createElement("td");
+                    var columnaS01 = document.createElement("p");
+                    var columnaS02 = document.createElement("p");
+                    var columnaS1 = document.createElement("p");
+                    var columnaS2 = document.createElement("p");
+                    var columnaS3 = document.createElement("p");
+                    var columnaS4 = document.createElement("p");
+                    var columnaS5 = document.createElement("p");
 
                     var Img = document.createElement("img");
                     Img.src = "../resources/Pencil_White.png";
@@ -43,70 +37,61 @@ function GetUsersList(){
                     ImgD.src = "../resources/Delete_White.png";
                     ImgD.classList.add("imgTable");
 
-                    columnS1.innerHTML = USR.FIRSTNAME;
-                    columnS2.innerHTML = USR.SECONDNAME;
-                    columnS3.innerHTML = USR.MIDNAME;
-                    columnS4.innerHTML = USR.LASTNAME;
-                    columnS5.innerHTML = USR.NIT;
-                    columnS6.innerHTML = USR.PHONE;
-                    columnS7.innerHTML = USR.MAIL;
-                    columnS8.innerHTML = USR.ID_TYPE;
+                    columnaS1.innerHTML = PRODUCT.SERIAL;
+                    columnaS2.innerHTML = PRODUCT.ID_TYPE_STATUS;
+                    columnaS3.innerHTML = PRODUCT.ID_TYPE;
+                    columnaS4.innerHTML = PRODUCT.ID_LOCATION;
+                    columnaS5.innerHTML = PRODUCT.ID;
                     
-                    columnS01.addEventListener("click", (evt) => EditUser(USR.ID));
-                    columnS01.append(Img);                    
-                    columnS01.innerHTML += "Editar";
-                    column01.append(columnS01);
+                    columnaS01.addEventListener("click", (evt) => EditProduct(PRODUCT.ID));
+                    columnaS01.append(Img);                    
+                    columnaS01.innerHTML += "Editar";
+                    columna01.append(columnaS01);
 
-                    columnS02.addEventListener("click", (evt) => DeleteUser(USR.ID));
-                    columnS02.append(ImgD);
-                    columnS02.innerHTML += "Eliminar";
-                    column02.append(columnS02);
+                    columnaS02.addEventListener("click", (evt) => DeleteProduct(PRODUCT.ID));
+                    columnaS02.append(ImgD);
+                    columnaS02.innerHTML += "Eliminar";
+                    columna02.append(columnaS02);
 
                     
-                    column01.classList.add("Box_Type1");
-                    column01.classList.add("bgBlue");
+                    columna01.classList.add("Box_Type1");
+                    columna01.classList.add("bgBlue");
 
                       
-                    column02.classList.add("Box_Type1");
-                    column02.classList.add("bgRed");
+                    columna02.classList.add("Box_Type1");
+                    columna02.classList.add("bgRed");
 
-                    column1.append(columnS1);
-                    column2.append(columnS2);
-                    column3.append(columnS3);
-                    column4.append(columnS4);
-                    column5.append(columnS5);
-                    column6.append(columnS6);
-                    column7.append(columnS7);
-                    column8.append(columnS8);
+                    columna1.append(columnaS1);
+                    columna2.append(columnaS2);
+                    columna3.append(columnaS3);
+                    columna4.append(columnaS4);
+                    columna5.append(columnaS5);
 
-                    content.append(column01);
-                    content.append(column02);
-                    content.append(column1);
-                    content.append(column2);
-                    content.append(column3);
-                    content.append(column4);
-                    content.append(column5);
-                    content.append(column6);
-                    content.append(column7);
-                    content.append(column8);
-                    tableUsr.append(content);
-                    //console.log("USR: " + USR.FIRSTNAME);
+                    contenido.append(columna01);
+                    contenido.append(columna02);
+                    contenido.append(columna1);
+                    contenido.append(columna2);
+                    contenido.append(columna3);
+                    contenido.append(columna4);
+                    contenido.append(columna5);
+                    tableProduct.append(contenido);
                 });
             }
         );
 }
 
-function EditUser(id){
-    sessionStorage.setItem("IdUser", id);
-    window.location.href = "UserForm.html";
+function EditProduct(id){
+    sessionStorage.setItem("idProduct", id);
+    window.location.href = "ProductForm.html";
+    console.log("Hola", id);
 }
 
-function DeleteUser(id){
+function DeleteProduct(id){
     let formData = new FormData();
         formData.append('ID', id);
 
     
-    fetch("../php/UserAPI.php?op=4",
+    fetch("../php/ProductAPI.php?op=4",
         {
             body: formData,
             method: "post"
@@ -116,13 +101,12 @@ function DeleteUser(id){
                 return result.json();
             }
         }).then(
-            function(data){
-                if(data.AR_Result.Result == "1"){
-                    //alert(data.AR_Result.Response);
+            function(datos){
+                if(datos.AR_Result.Result == "1"){
                     location.reload();
                 }
                 else{
-                    alert("No se actualizo el usuario debido al siguiente error:\n " + data.AR_Result.Response);
+                    alert("No se actualizo el producto debido al siguiente error:\n " + datos.AR_Result.Response);
                 }
             }
         );

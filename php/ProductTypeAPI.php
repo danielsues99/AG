@@ -7,7 +7,7 @@
         CreateProductType();
         break;
        case 2: // R ead Product(s) Type
-        ReadProductType();
+        ReadProductInfo();
         break;
        case 3: // U pdate Product Type
         UpdateProductType();
@@ -62,12 +62,12 @@
     $enlace = conectar();
 
     // Verificacion que las variables vengan en el consumo del API
-    if(isset($_POST["ID"]) || isset($_POST["ID_CATEGORY"])){
+    if(isset($_POST["idProduct"])){
         
-        $Query = " SELECT * FROM product_type WHERE ID != 0 ";
-        if(isset($_POST["ID"])){
-          $ID = $_POST["ID"];
-          $Query .= " AND ID = ".$ID." ";
+        $Query = " SELECT * FROM product_type WHERE idProduct != 0 ";
+        if(isset($_POST["idProduct"])){
+          $ID = $_POST["idProduct"];
+          $Query .= " AND idProduct = ".$ID." ";
         }
         if(isset($_POST["ID_CATEGORY"])){
           $ID_CATEGORY = $_POST["ID_CATEGORY"];
@@ -183,6 +183,46 @@
       echo json_encode(array('AR_Result' => array('Response' => 'Error -> No se especifico el ID del tipo de producto', 'Result' => '0')));
     }
     
-  }      
+  }
+  
+  function ReadProductInfo(){
+
+    // Asignacion de Variables 
+     $SERIAL = "";
+ 
+     $enlace = conectar();
+ 
+     // Verificacion que las variables vengan en el consumo del API
+     if(isset($_POST["SERIAL"])){
+         
+         $Query = " SELECT p.SERIAL, pt.DESCRIPTION, pt.PRICE FROM product p INNER JOIN product_type pt ON pt.ID = p.ID_TYPE WHERE p.SERIAL = '".$SERIAL."' ";
+ 
+         $sCmd = mysqli_query($enlace, $Query);
+         if ($sCmd === FALSE){
+             echo json_encode(array('AR_Result' => array('Response' => 'Error -> '. $enlace->error, 'Result' => '0')));
+         }
+         else{
+             $rows = array();
+             while($r = mysqli_fetch_assoc($sCmd)) {
+                 $rows[] = $r;
+             }
+             print json_encode(array('Products' => $rows));
+         }
+     }
+     else
+     {
+       $sCmd = mysqli_query($enlace, "SELECT * FROM product ");
+       if ($sCmd === FALSE){
+           echo json_encode(array('AR_Result' => array('Response' => 'Error -> ' . $enlace->error, 'Result' => '0')));
+       }else{
+           $rows = array();
+           while($r = mysqli_fetch_assoc($sCmd)) {
+               $rows[] = $r;
+           }
+           print json_encode(array('Products' => $rows));
+       }
+     }
+     
+   }
    
 ?>
