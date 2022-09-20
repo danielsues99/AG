@@ -4,9 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/ProductManagement.css">
+    <link rel="stylesheet" href="../css/UserManagement.css">
     <script src="../js/Global.js"></script>
-    <script src="../js/ProductCategoryManagement.js"></script>
+    <script src="../js/ProductType.js"></script>
     <title>Agility Report | Administracion de productos</title>
 </head>
 <body class="bodyBack"  onload="ValidateSession();">
@@ -24,7 +24,9 @@
                 </div>
             </div>
             <div class="FlexBox FlexCenter FlexColumn Header_C2">
-                <img class="LogoPhoto" src="../resources/Logo.png" />
+                <a href="Dashboard.html"> 
+                    <img class="LogoPhoto" src="../resources/Logo.png" />
+                </a>
             </div>
             <div class="FlexBox FlexCenter FlexColumn Header_C3">
                 <a href="Dashboard.html" class="Box_Type2 BtnHeader "> 
@@ -42,42 +44,26 @@
 
         <!-- BODY -->
         <div class="Box_Type1 FlexBox FlexColumn ContentBox">
-            <div class="GraphSection">
-                <div class="GraphIcon">
-                    <p>80%</p>
-                </div>
-                <p>ALCANCE MES PASADO</p>
-                <div class="GraphIcon">
-                    <p>80%</p>
-                </div>
-                <p>ALCANCE MES PASADO</p>
-                <div class="GraphIcon">
-                    <p>80%</p>
-                </div>
-                <p>ALCANCE MES PASADO</p>
-            </div>
             <div class="InfoSection">
                 <p class="P_Title">ADMINISTRACION DE PRODUCTOS</p>
                 <div class="FlexBox FlexColumn ContentBox">
-                    <a onclick="EditProduct(0)" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
+                    <a onclick="EditUser(0)" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
                         <img src="../resources/BigUser_White.png"/>
-                        <p>NUEVO PRODUCTO</p>
+                        <p>NUEVO TIPO DE PRODUCTO</p>
                     </a>
-                    <a onclick="window.location.href = 'ProductType.html';" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
+                    <a href="" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
                         <img src="../resources/Config_white.png"/>
                         <p> TIPOS DE PRODUCTOS</p>
                     </a>
                 </div >
                 <div class="Input_Text tblList">
-                    <table id="TblProductsC">
+                    <table id="TblProductsType">
                         <tr>
-                            <th>Editar</th>
-                            <th>Eliminar</th>
-                            <th>Serial</th>
-                            <th>Tipo de Estado</th>
-                            <th>Tipo de ID</th>
-                            <th>Ubicación</th>
-                            <th>ID</th>
+                            <th>EDITAR</th>
+                            <th>ELIMINAR</th>
+                            <th>DESCRIPCION</th>
+                            <th>PRECIO</th>
+                            <th>ID CATEGORIA</th>
                         </tr>
                     </table>
                 </div>

@@ -7,7 +7,7 @@
         CreateProductType();
         break;
        case 2: // R ead Product(s) Type
-        ReadProductInfo();
+        ReadProductType();
         break;
        case 3: // U pdate Product Type
         UpdateProductType();

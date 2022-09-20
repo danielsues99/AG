@@ -124,3 +124,31 @@ function SearchUserType(){
             }
         );
 }
+
+function SearchProductType(){
+    var ID = sessionStorage.getItem("idProductType");
+    let formData = new FormData();
+        formData.append('ID', ID);
+
+    
+    fetch("php/ProductTypeAPI.php?op=2",
+        {
+            body: formData,
+            method: "post"
+        })
+        .then(function (result) {
+            if (result.ok) {
+                return result.json();
+            }
+        }).then(
+            function(data){
+                data.ProductsType.forEach(function(PRODTYPE){
+                    var idProductType = PRODTYPE.ID;
+                    sessionStorage.setItem("idProductType", idProductType);
+                    sessionStorage.setItem("UserType_Logged", USRTYP.DESCRIPTION);
+                    console.log(sessionStorage.getItem("UserType_Logged"));
+                    window.location.href = "views/ProductType.html";
+                });
+            }
+        );
+}
