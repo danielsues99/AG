@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/general.css">
+    <link rel="stylesheet" href="../css/UserManagement.css">
+    <script src="../js/Global.js"></script>
+    <script src="../js/ProductForm.js"></script>
+    <title>Agility Report | Administracion de tipo de producto</title>
+</head>
+<body class="bodyBack"  onload="ValidateSession();">
+
+    <div class="MainContainerBack">
+
+        <!-- HEADER -->
+        <div class="Box_Type1 FlexBox FlexColumn HeaderBox">
+            <div class="FlexBox FlexCenter FlexColumn Header_C1">
+                <img class="ProfilePhoto" src="../resources/BigUser_White.png" />
+                
+                <div class="FlexBox FlexRow LabelsInfo">
+                    <p class="Bold" id="lbl_User">Usuario Logueado</p>
+                    <p class="Italic" id="lbl_TypeUser">Rango</p>
+                </div>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C2">
+                <a href="Dashboard.html"> 
+                    <img class="LogoPhoto" src="../resources/Logo.png" />
+                </a>
+            </div>
+            <div class="FlexBox FlexCenter FlexColumn Header_C3">
+                <a href="Dashboard.html" class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/tile_white.png" >
+                </a>
+                <a class="Box_Type2 BtnHeader "> 
+                    <img src="../resources/Light_White.png">
+                </a>
+                <a href="../Index.html" class="Box_Type2 BtnHeaderExit "> 
+                    <img src="../resources/exit_white.png">
+                </a>
+               
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="Box_Type1 FlexBox FlexColumn ContentBox">
+            <div class="InfoSection">
+                <p class="P_Title2">REGISTRAR NUEVO TIPO DE PRODUCTO</p>
+                <div class="FlexBox FlexColumn OrderForm">
+                    <div class="FlexBox FlexRow">
+                        <p>Descripción *</p>
+                        <input type="text" id="description" class="Input_Text" placeholder="Descripción tipo producto..." required />
+                    </div>
+                    <div class="FlexBox FlexRow">
+                        <p>Precio *</p>
+                        <input type="text" id="price" class="Input_Text" placeholder="Ingrese precio..." required />
+                    </div>
+                    
+                    <div class="FlexBox FlexRow">
+                        <p>Categoría *</p>
+                        <select id="category" class="Input_Text" required >
+                            <option selected disabled>Elija una opcion</option>
+                            <option value="1">Teclado</option>
+                            <option value="4">Mouse</option>
+                            <option value="5">Audífonos</option>
+                            <option value="6">Manos Libres</option>
+                            <option value="7">Teclado RGB</option>
+                            <option value="8">Accesorio PC</option>
+                            <option value="9">Monitor LG</option>
+                        </select>
+                    </div>
+                    
+                </div>
+                <div class="FlexBox FlexColumn ContentBox">
+                    <a href="ProductType.html" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
+                        <img src="../resources/Left_Arrow_White.png"/>
+                        <p> VOLVER</p>
+                    </a>
+                    <a onclick="ModifyProductType();" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
+                        <img src="../resources/Pencil_White.png"/>
+                        <p> GUARDAR</p>
+                    </a>
+                </div >
+            </div>
+        </div>
+
+        <br><br>
+        
+    </div>
+
+    
+    
+</body>
+</html>

@@ -30,8 +30,8 @@ function LoadPage(){
     }
 }
 
-function ModifyProduct(){
-    if(sessionStorage.getItem("idProduct")=="0"){
+function ModifyProductType(){
+    if(sessionStorage.getItem("idProductType")=="0"){
         AddProduct();
     }else{
         UpdateProduct();
@@ -39,9 +39,9 @@ function ModifyProduct(){
 }
 
 function AddProduct(){
-    var FIRSTNAME = document.getElementById("1").value;
-    var SECONDNAME = document.getElementById("2").value;
-    var MIDNAME = document.getElementById("3").value;
+    var DESCRIPTION = document.getElementById("description").value;
+    var PRICE = document.getElementById("price").value;
+    var ID_CATEGORY = document.getElementById("3").value;
     var LASTNAME = document.getElementById("4").value;
     var NIT = document.getElementById("5").value;
     var PHONE = document.getElementById("6").value;

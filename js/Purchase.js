@@ -100,7 +100,7 @@ function FinishBuy(){
                 }
             );
         });
-        alert("Registro de productos finalizado con exito.");
+        alert("Compra a proveedor finalizada con exito.");
                           
         location.reload();
     }

@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="../css/general.css">
     <link rel="stylesheet" href="../css/Purchase.css">
     <script src="../js/Global.js"></script>
-    <script src="../js/Ssale.js"></script>
+    <script src="../js/Sale.js"></script>
     <title>Agility Report | Compras</title>
 </head>
 <body class="bodyBack" onload="ValidateSession(); fillCategory(); fillLocation();">
@@ -59,10 +59,50 @@
                 <p>ALCANCE MES PASADO</p>
             </div>
             <div class="InfoSection">
-                <p class="P_Title2">MODULO DE COMPRAS</p>
+                <p class="P_Title2">MODULO DE VENTAS</p>
+                <div class="FlexBox FlexColumn"> 
+                    <div class="FlexBox FlexRow" style="margin-left: 60px; margin-right: 60px; width: 100%;">
+                        <p>Categoria *</p>
+                        <div class="FlexBox FlexColumn">
+                            <div onclick="ViewAddCategoryForm();" class="FlexCenter Box_Type1 bgBlue BtnFormPurchaseEdit">
+                                <img src="../resources/Pencil_White.png" class="imgTableBtnEdit">
+                            </div>
+                            <select onchange="fillType();" id="1" class="Input_Text" required style="margin-top: -30px; margin-left: -5px;">
+                                <option selected disabled value="0">Elija una opcion</option>
+                            </select>     
+                        </div>
+                    </div>                   
+                    <br>
+                    <div class="FlexBox FlexRow" style="margin-left: 60px; margin-right: 60px; width: 100%;">
+                        <p>Tipo *</p>
+                        <div class="FlexBox FlexColumn">
+                            <div  onclick="ViewAddTypeForm();" class="FlexCenter Box_Type1 bgBlue BtnFormPurchaseEdit">
+                                <img src="../resources/Pencil_White.png" class="imgTableBtnEdit">
+                            </div>
+                            <select id="2" class="Input_Text" required style="margin-top: -30px; margin-left: -5px;">
+                                <option selected disabled value="0">Elija una opcion</option>
+                            </select> 
+                        </div>
+                    </div>                 
+                    <br>
+                    <div class="FlexBox FlexRow" style="margin-left: 60px; margin-right: 60px; width: 100%;">
+                        <p>Sede *</p>
+                        <div class="FlexBox FlexColumn">
+                            <div class="FlexCenter Box_Type1 BtnFormPurchaseEdit">
+                                <img src="../resources/Pencil_White.png" class="imgTableBtnEdit">
+                            </div>
+                            <select id="3" class="Input_Text" required style="margin-top: -30px; margin-left: -5px;">
+                                <option selected disabled value="0">Elija una opcion</option>
+                            </select> 
+                    </div>                 
+                    <br>
+                </div>
+
+                <br>
+                <br>
 
                 <div class="FlexBox FlexColumn FlexCenter" style="width: 100%;"> 
-                    <div class="FlexBox FlexRow" style="width: 80%;" >
+                    <div class="FlexBox FlexRow" style="width: 60%;" >
                         <p>Serial *</p>
                         <input type="text" id="4" class="Input_Text" placeholder="Escriba aqui..." required />
                     </div>
@@ -77,10 +117,11 @@
                 <div class="Input_Text tblList" style="margin-top: 25px;">
                     <table id="TblProducts">
                         <tr>
-                            <th>QUITAR</th>
+                            <th>BORRAR</th>
+                            <th>CATEGORIA</th>
                             <th>TIPO</th>
+                            <th>SEDE</th>
                             <th>SERIAL</th>
-                            <th>PRECIO</th>
                         </tr>
                     </table>
                 </div>

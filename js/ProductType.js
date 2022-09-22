@@ -69,9 +69,9 @@ function GetProductTypeList(){
         );
 }
 
-function EditUser(id){
-    sessionStorage.setItem("IdUser", id);
-    window.location.href = "UserForm.html";
+function EditProductType(id){
+    sessionStorage.setItem("idProductType", id);
+    window.location.href = "ProductTypeForm.html";
 }
 
 function DeleteUser(id){

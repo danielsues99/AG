@@ -1,9 +1,12 @@
 lsProducts = [];
 
 function AddProduct(){
+    var Category = document.getElementById("1");
+    var Type = document.getElementById("2");
+    var Location = document.getElementById("3");
     var Serial = document.getElementById("4");
 
-    if( Serial.value.trim() == ""){
+    if(Type.value == "0" || Location.value == "0" || Serial.value.trim() == ""){
         alert("Por favor rellene todos los campos necesarios (*).");
     }else{
         var itemProduct = [Serial.value,1,Type.value,Location.value];
@@ -97,7 +100,7 @@ function FinishBuy(){
                 }
             );
         });
-        alert("Registro de productos finalizado con exito.");
+        alert("Venta registrada con exito.");
                           
         location.reload();
     }
