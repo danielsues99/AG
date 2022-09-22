@@ -46,11 +46,6 @@ function AddItemToTable(_Category,_Type,_Location,_Serial){
                     column04.innerHTML = _Location;
                     column05.innerHTML = _Serial;
                     
-
-                    //columnS1.addEventListener("click", (evt) => DeleteUser(USR.ID));
-                    columnS1.append(ImgD);
-                    columnS1.innerHTML += "Eliminar";
-                    //column1.append(columnS1);
                       
                     columnS1.classList.add("Box_Type1");
                     columnS1.classList.add("bgRed");
@@ -60,7 +55,6 @@ function AddItemToTable(_Category,_Type,_Location,_Serial){
                     column4.append(column04);
                     column5.append(column05);
 
-                    content.append(columnS1);
                     content.append(column2);
                     content.append(column3);
                     content.append(column4);

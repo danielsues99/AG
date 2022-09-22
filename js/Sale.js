@@ -26,7 +26,6 @@ function AddItemToTable(_Category,_Type,_Location,_Serial){
 
     var tableUsr = document.getElementById("TblProducts");
                     var content = document.createElement("tr");
-                    var columnS1 = document.createElement("td");
                     var column2 = document.createElement("td");
                     var column3 = document.createElement("td");
                     var column4 = document.createElement("td");
@@ -45,22 +44,11 @@ function AddItemToTable(_Category,_Type,_Location,_Serial){
                     column03.innerHTML = _Type;
                     column04.innerHTML = _Location;
                     column05.innerHTML = _Serial;
-                    
-
-                    //columnS1.addEventListener("click", (evt) => DeleteUser(USR.ID));
-                    columnS1.append(ImgD);
-                    columnS1.innerHTML += "Eliminar";
-                    //column1.append(columnS1);
-                      
-                    columnS1.classList.add("Box_Type1");
-                    columnS1.classList.add("bgRed");
 
                     column2.append(column02);
                     column3.append(column03);
                     column4.append(column04);
                     column5.append(column05);
-
-                    content.append(columnS1);
                     content.append(column2);
                     content.append(column3);
                     content.append(column4);

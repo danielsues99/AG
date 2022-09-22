@@ -16,6 +16,7 @@ function GetProductTypeList(){
                     var content = document.createElement("tr");
                     var column01 = document.createElement("td");
                     var column02 = document.createElement("td");
+                    var columnS3 = document.createElement("p");
                     var column1 = document.createElement("td");
                     var column2 = document.createElement("td");
                     var column3 = document.createElement("td");
@@ -23,7 +24,6 @@ function GetProductTypeList(){
                     var columnS02 = document.createElement("p");
                     var columnS1 = document.createElement("p");
                     var columnS2 = document.createElement("p");
-                    var columnS3 = document.createElement("p");
 
                     var Img = document.createElement("img");
                     Img.src = "../resources/Pencil_White.png";
@@ -32,9 +32,9 @@ function GetProductTypeList(){
                     ImgD.src = "../resources/Delete_White.png";
                     ImgD.classList.add("imgTable");
 
+                    columnS3.innerHTML = PRODTYPE.ID;
                     columnS1.innerHTML = PRODTYPE.DESCRIPTION;
                     columnS2.innerHTML = PRODTYPE.PRICE;
-                    columnS3.innerHTML = PRODTYPE.ID_CATEGORY;
                     
                     columnS01.addEventListener("click", (evt) => EditProductType(PRODTYPE.ID));
                     columnS01.append(Img);                    
@@ -53,16 +53,15 @@ function GetProductTypeList(){
                       
                     column02.classList.add("Box_Type1");
                     column02.classList.add("bgRed");
-
+                    column3.append(columnS3);
                     column1.append(columnS1);
                     column2.append(columnS2);
-                    column3.append(columnS3);
 
                     content.append(column01);
                     content.append(column02);
+                    content.append(column3);
                     content.append(column1);
                     content.append(column2);
-                    content.append(column3);
                     tableProductType.append(content);
                 });
             }
