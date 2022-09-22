@@ -75,10 +75,13 @@ function GetProductsList(){
         );
 }
 
-function EditProduct(id){
+function EditProduct(){
     sessionStorage.setItem("idProduct", id);
     window.location.href = "ProductForm.html";
     console.log("Hola", id);
+}
+function AddProduct(){
+    window.location.href = "ProductForm.html";
 }
 
 function DeleteProduct(id){

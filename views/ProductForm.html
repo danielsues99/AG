@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/general.css">
-    <link rel="stylesheet" href="../css/UserManagement.css">
+    <link rel="stylesheet" href="../css/Purchase.css">
     <script src="../js/Global.js"></script>
     <script src="../js/ProductForm.js"></script>
-    <title>Agility Report | Administracion de productos</title>
+    <title>Agility Report | Compras</title>
 </head>
-<body class="bodyBack"  onload="ValidateSession();">
+<body class="bodyBack" onload="ValidateSession(); fillCategory(); fillLocation();">
 
     <div class="MainContainerBack">
 
@@ -18,9 +18,9 @@
             <div class="FlexBox FlexCenter FlexColumn Header_C1">
                 <img class="ProfilePhoto" src="../resources/BigUser_White.png" />
                 
-                <div class="FlexBox FlexRow LabelsInfo">
-                    <p class="Bold" id="lbl_User">Usuario Logueado</p>
-                    <p class="Italic" id="lbl_TypeUser">Rango</p>
+                <div class="FlexBox FlexRow">
+                    <p id="lbl_User">Usuario Logueado</p>
+                    <p id="lbl_TypeUser">Rango</p>
                 </div>
             </div>
             <div class="FlexBox FlexCenter FlexColumn Header_C2">
@@ -59,50 +59,143 @@
                 <p>ALCANCE MES PASADO</p>
             </div>
             <div class="InfoSection">
-                <p class="P_Title2">GESTION DE PRODUCTO</p>
-                <div class="FlexBox FlexColumn OrderForm">
-                    <div class="FlexBox FlexRow">
+                <p class="P_Title2">REGISTRO DE PRODUCTOS</p>
+                <div class="FlexBox FlexColumn"> 
+                    <div class="FlexBox FlexRow" style="margin-left: 60px; margin-right: 60px; width: 100%;">
+                        <p>Categoria *</p><br>
+                        <div class="FlexBox FlexColumn">
+                            <div onclick="ViewAddCategoryForm();" class="FlexCenter Box_Type1 BtnFormPurchaseEdit">
+                            </div>
+                            <select onchange="fillType();" id="1" class="Input_Text" required style="margin-top: -30px; margin-left: -5px;">
+                                <option selected disabled value="0">Elija una opcion</option>
+                            </select>     
+                        </div>
+                    </div>                   
+                    <br><br>
+                    <div class="FlexBox FlexRow" style="margin-left: 60px; margin-right: 60px; width: 100%;">
+                        <p>Tipo de Producto *</p><br>
+                        <div class="FlexBox FlexColumn">
+                            <div  onclick="ViewAddTypeForm();" class="FlexCenter Box_Type1 BtnFormPurchaseEdit">
+                            </div>
+                            <select id="2" class="Input_Text" required style="margin-top: -30px; margin-left: -5px;">
+                                <option selected disabled value="0">Elija una opcion</option>
+                            </select> 
+                        </div>
+                    </div>                 
+                    <br><br><br><br><br>
+                    <div hidden>
+                        <p>Sede *</p>
+                        <div class="FlexBox FlexColumn">
+                            <div class="FlexCenter Box_Type1 BtnFormPurchaseEdit">
+                            </div>
+                            <select id="3" class="Input_Text" required style="margin-top: -30px; margin-left: -5px;">
+                                <option selected disabled value="1">Elija una opcion</option>
+                            </select> 
+                        </div>
+                    </div>
+                    <br><br>
+                <div class="FlexBox FlexColumn FlexCenter" style="width: 100%;"> 
+                    <div class="FlexBox FlexRow" style="width: 60%;" >
                         <p>Serial *</p>
-                        <input type="text" id="1" class="Input_Text" placeholder="Escriba aqui..." required />
-                    </div>
-                    <div class="FlexBox FlexRow">
-                        <p>Type Status *</p>
-                        <input type="text" id="2" class="Input_Text" placeholder="Escriba aqui..." required />
-                    </div>
-                    
-                    <div class="FlexBox FlexRow">
-                        <p>Type</p>
-                        <input type="text" id="3" class="Input_Text" placeholder="Escriba aqui..." />
-                    </div>
-                    
-                    <div class="FlexBox FlexRow">
-                        <p>Location *</p>
-                    <input type="text" id="4" class="Input_Text" placeholder="Escriba aqui..." required />
-                    </div>
-                    <div class="FlexBox FlexRow">
-                        <p>ID *</p>
-                    <input type="text" id="idProduct" class="Input_Text" placeholder="Escriba aqui..." required />
+                        <input type="text" id="4" class="Input_Text" placeholder="Escriba aqui..." required />
                     </div>
                     
                 </div>
-                <div class="FlexBox FlexColumn ContentBox">
-                    <a href="ProductCategoryManagement.html" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
-                        <img src="../resources/Left_Arrow_White.png"/>
-                        <p> VOLVER</p>
+                <div style="margin-left: 250px;" onclick="AddProduct();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                    <p> AGREGAR</p>
+                </div>
+                <br>
+                
+                <div class="Input_Text tblList" style="margin-top: 25px;">
+                    <table id="TblProducts">
+                        <tr>
+                            <th>CATEGORIA</th>
+                            <th>TIPO</th>
+                            <th>SEDE</th>
+                            <th>SERIAL</th>
+                        </tr>
+                    </table>
+                </div>
+
+                <br>
+
+                <div class="FlexBox FlexColumn FlexCenter" style="width: 100%;"> 
+                    <a href="Dashboard.html" class="FlexBox FlexRow FlexCenter Box_Type3 ButtonAux BtnFormPurchase">
+                        <img src="../resources/Delete_White.png"/>
+                        <p> CANCELAR </p>
                     </a>
-                    <a onclick="ModifyProduct();" class="FlexBox FlexColumn FlexCenter Box_Type3 bgBlue ButtonAux ">
-                        <img src="../resources/Pencil_White.png"/>
-                        <p> GUARDAR</p>
-                    </a>
-                </div >
+                    <div onclick="FinishBuy();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                        <img src="../resources/ShoppingCar_White.png"/>
+                        <p> FINALIZAR </p>
+                    </div>
+                </div>
             </div>
+
+
+            
         </div>
 
-        <br><br>
         
     </div>
 
+    <div id="CategoryForm" style="visibility: hidden; position:fixed; width: 100%; height: 100%; display: flex;
+    justify-content: center; background-color: rgba(10, 10, 10, 0.97);
+    align-items: center;">
+        <div class="FlexBox FlexRow FlexCenter" style="width: 60%;"> 
+            <div class="FlexBox FlexRow FlexCenter" style="width: 60%;" >                
+                <p class="P_Title2">REGISTRAR CATEGORIA</p>
+            </div>
+            <div class="FlexBox FlexRow" style="width: 60%;" >
+                <p>Nombre de categoria *</p>
+                <input type="text" id="C1" class="Input_Text" placeholder="Escriba aqui..." required />
+            </div>
+            <div class="FlexBox FlexColumn FlexCenter" style="width: 60%;" >                
+                <div onclick="ViewCloseCategoryForm();" class="FlexBox FlexRow FlexCenter Box_Type3 bgRed ButtonAux BtnFormPurchase">
+                    <img src="../resources/Left_Arrow_White.png"/>
+                    <p> VOLVER </p>
+                </div>
+                <div onclick="AddProductCategory();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                    <img src="../resources/Pencil_White.png"/>
+                    <p> AGREGAR</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <div id="TypeForm" style="visibility: hidden; position:fixed; width: 100%; height: 100%; display: flex;
+    justify-content: center; background-color: rgba(10, 10, 10, 0.97);
+    align-items: center;">
+        <div class="FlexBox FlexRow FlexCenter" style="width: 60%;"> 
+            <div class="FlexBox FlexRow FlexCenter" style="width: 60%;" >                
+                <p class="P_Title2">REGISTRAR TIPO</p>
+            </div>
+            <div class="FlexBox FlexRow" style="width: 60%;" >
+                <p>Nombre de tipo del producto *</p>
+                <input type="text" id="C2" class="Input_Text" placeholder="Escriba aqui..." required />
+            </div>
+            <div class="FlexBox FlexRow" style="width: 60%;" >
+                <p>Precio *</p>
+                <input type="text" id="C3" class="Input_Text" placeholder="Escriba aqui..." required />
+            </div>
+            <div class="FlexBox FlexColumn FlexCenter" style="width: 60%;" >                
+                <div onclick="ViewCloseTypeForm();" class="FlexBox FlexRow FlexCenter Box_Type3 bgRed ButtonAux BtnFormPurchase">
+                    <img src="../resources/Left_Arrow_White.png"/>
+                    <p> VOLVER </p>
+                </div>
+                <div onclick="AddProductType();" class="FlexBox FlexRow FlexCenter Box_Type3 bgBlue ButtonAux BtnFormPurchase">
+                    <img src="../resources/Pencil_White.png"/>
+                    <p> AGREGAR</p>
+                </div>
+            </div>
+            
+        </div>
+    </div>
     
     
 </body>
+
+
+
+
+
 </html>
